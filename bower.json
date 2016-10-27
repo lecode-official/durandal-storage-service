@@ -10,9 +10,6 @@
   "moduleType": [
     "amd"
   ],
-  "devDependencies": {
-    "DefinitelyTyped": "*"
-  },
   "keywords": [
     "Storage",
     "LocalStore",
