@@ -42,9 +42,9 @@ class PageStore implements IStore {
     /**
      * Stores the given value at the specified key. If null is provided as value, the entry is removed from the store.
      * @param {string} key The key at which the value should be stored. 
-     * @param {any} value The value that should be stored. 
+     * @param {T|null} value The value that should be stored. 
      */
-    public store<T>(key: string, value: T) {
+    public store<T>(key: string, value: T|null) {
         if (!value) {
             this.pageStore[window.location.host + ":" + key] = null;
         } else {

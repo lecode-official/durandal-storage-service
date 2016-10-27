@@ -46,9 +46,9 @@ declare module 'Storage/IStore' {
 	    /**
 	     * Stores the given value at the specified key. If null is provided as value, the entry is removed from the store.
 	     * @param {string} key The key at which the value should be stored.
-	     * @param {any} value The value that should be stored.
+	     * @param {T|null} value The value that should be stored.
 	     */
-	    store<T>(key: string, value: T): void;
+	    store<T>(key: string, value: T | null): void;
 	}
 	export = IStore;
 
@@ -65,9 +65,9 @@ declare module 'Storage/LocalStore' {
 	    /**
 	     * Stores the given value at the specified key. If null is provided as value, the entry is removed from the store.
 	     * @param {string} key The key at which the value should be stored.
-	     * @param {any} value The value that should be stored.
+	     * @param {T|null} value The value that should be stored.
 	     */
-	    store<T>(key: string, value: T): void;
+	    store<T>(key: string, value: T | null): void;
 	}
 	export = LocalStore;
 
@@ -88,9 +88,9 @@ declare module 'Storage/PageStore' {
 	    /**
 	     * Stores the given value at the specified key. If null is provided as value, the entry is removed from the store.
 	     * @param {string} key The key at which the value should be stored.
-	     * @param {any} value The value that should be stored.
+	     * @param {T|null} value The value that should be stored.
 	     */
-	    store<T>(key: string, value: T): void;
+	    store<T>(key: string, value: T | null): void;
 	}
 	export = PageStore;
 
@@ -107,9 +107,9 @@ declare module 'Storage/SessionStore' {
 	    /**
 	     * Stores the given value at the specified key. If null is provided as value, the entry is removed from the store.
 	     * @param {string} key The key at which the value should be stored.
-	     * @param {any} value The value that should be stored.
+	     * @param {T|null} value The value that should be stored.
 	     */
-	    store<T>(key: string, value: T): void;
+	    store<T>(key: string, value: T | null): void;
 	}
 	export = SessionStore;
 
