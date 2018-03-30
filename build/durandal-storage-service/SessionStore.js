@@ -1,11 +1,11 @@
-///<amd-module name='Storage/SessionStore'/>
-define("Storage/SessionStore", ["require", "exports", "Storage/StorageSerializer", "store2"], function (require, exports, StorageSerializer, store2) {
+///<amd-module name='durandal-storage-service/SessionStore'/>
+define("durandal-storage-service/SessionStore", ["require", "exports", "durandal-storage-service/StorageSerializer", "store2"], function (require, exports, StorageSerializer, store2) {
     "use strict";
     // #endregion
     /**
      * Represents a store that stores values in session scope.
      */
-    var SessionStore = (function () {
+    var SessionStore = /** @class */ (function () {
         function SessionStore() {
         }
         // #region Public Methods

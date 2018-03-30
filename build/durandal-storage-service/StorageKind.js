@@ -1,5 +1,5 @@
-///<amd-module name='Storage/StorageKind'/>
-define("Storage/StorageKind", ["require", "exports"], function (require, exports) {
+///<amd-module name='durandal-storage-service/StorageKind'/>
+define("durandal-storage-service/StorageKind", ["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Represents the kind of a storage.

@@ -1,10 +1,10 @@
-///<amd-module name='Storage/StorageSerializer'/>
-define("Storage/StorageSerializer", ["require", "exports"], function (require, exports) {
+///<amd-module name='durandal-storage-service/StorageSerializer'/>
+define("durandal-storage-service/StorageSerializer", ["require", "exports"], function (require, exports) {
     "use strict";
     /**
      * Represents a serializer that can be registered at the storage service in order to be able to serialize and deserialize a specific type.
      */
-    var StorageSerializer = (function () {
+    var StorageSerializer = /** @class */ (function () {
         // #region Constructors
         /**
          * Initializes a new StorageSerializer instance.

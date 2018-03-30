@@ -1,20 +1,26 @@
 ﻿
-///<amd-module name='Storage/SessionStore'/>
+///<amd-module name='durandal-storage-service/PageStore'/>
 
 // #region Import Directives
 
-/// <reference path="../Typings/References.d.ts" />
-
-import IStore = require("Storage/IStore");
-import StorageSerializer = require("Storage/StorageSerializer");
-import store2 = require("store2");
+import IStore = require("durandal-storage-service/IStore");
+import StorageSerializer = require("durandal-storage-service/StorageSerializer");
 
 // #endregion
 
 /**
- * Represents a store that stores values in session scope.
+ * Represents a store that stores values in page scope, which means the data is lost when the page is closed.
  */
-class SessionStore implements IStore {
+class PageStore implements IStore {
+
+    // #region Private Fields
+
+    /**
+     * Contains the dictionary that stores the values
+     */
+    private pageStore: { [key: string]: any; } = { };
+
+    // #endregion
 
     // #region Public Methods
     
@@ -24,10 +30,10 @@ class SessionStore implements IStore {
      * @return {T|null} Returns the value at the given key.
      */
     public get<T>(key: string): T|null {
-        if (!store2.session.has(window.location.host + ":" + key)) {
+        if (!this.pageStore[window.location.host + ":" + key]) {
             return null;
         } else {
-            return StorageSerializer.deserialize(store2.session.get(window.location.host + ":" + key));
+            return StorageSerializer.deserialize(this.pageStore[window.location.host + ":" + key]);
         }
     }
 
@@ -38,9 +44,9 @@ class SessionStore implements IStore {
      */
     public store<T>(key: string, value: T|null) {
         if (!value) {
-            store2.session.remove(window.location.host + ":" + key);
+            this.pageStore[window.location.host + ":" + key] = null;
         } else {
-            store2.session.set(window.location.host + ":" + key, StorageSerializer.serialize(value));
+            this.pageStore[window.location.host + ":" + key] = StorageSerializer.serialize(value);
         }
     }
 
@@ -48,4 +54,4 @@ class SessionStore implements IStore {
 }
 
 // Exports the module, so that it can be loaded by Require
-export = SessionStore;
+export = PageStore;

@@ -1,19 +1,19 @@
 ﻿
-///<amd-module name='Storage/StorageService'/>
+///<amd-module name='durandal-storage-service/StorageService'/>
 
 // #region Import Directives
 
-/// <reference path="../Typings/References.d.ts" />
+/// <reference types="durandal-globalization" />
 
-import DateTime = require("Globalization/DateTime");
-import LocalStore = require("Storage/LocalStore");
-import Numeric = require("Globalization/Numeric");
-import PageStore = require("Storage/PageStore");
-import SessionStore = require("Storage/SessionStore");
-import IStore = require("Storage/IStore");
-import StorageKind = require("Storage/StorageKind");
-import StorageSerializer = require("Storage/StorageSerializer");
-import TimeSpan = require("Globalization/TimeSpan");
+import DateTime = require("durandal-globalization/DateTime");
+import LocalStore = require("durandal-storage-service/LocalStore");
+import Numeric = require("durandal-globalization/Numeric");
+import PageStore = require("durandal-storage-service/PageStore");
+import SessionStore = require("durandal-storage-service/SessionStore");
+import IStore = require("durandal-storage-service/IStore");
+import StorageKind = require("durandal-storage-service/StorageKind");
+import StorageSerializer = require("durandal-storage-service/StorageSerializer");
+import TimeSpan = require("durandal-globalization/TimeSpan");
 
 // #endregion
 

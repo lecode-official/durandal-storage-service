@@ -1,5 +1,5 @@
 ﻿
-///<amd-module name='Storage/StorageSerializer'/>
+///<amd-module name='durandal-storage-service/StorageSerializer'/>
 
 /**
  * Represents a serializer that can be registered at the storage service in order to be able to serialize and deserialize a specific type.

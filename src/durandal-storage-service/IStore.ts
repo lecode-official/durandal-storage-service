@@ -1,11 +1,5 @@
 ﻿
-///<amd-module name='Storage/IStore'/>
-
-// #region Import Directives
-
-/// <reference path="../Typings/References.d.ts" />
-
-// #endregion
+///<amd-module name='durandal-storage-service/IStore'/>
 
 /**
  * Represents a store that stores values.

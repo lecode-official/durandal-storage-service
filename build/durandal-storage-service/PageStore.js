@@ -1,17 +1,18 @@
-///<amd-module name='Storage/PageStore'/>
-define("Storage/PageStore", ["require", "exports", "Storage/StorageSerializer"], function (require, exports, StorageSerializer) {
+///<amd-module name='durandal-storage-service/PageStore'/>
+define("durandal-storage-service/PageStore", ["require", "exports", "durandal-storage-service/StorageSerializer"], function (require, exports, StorageSerializer) {
     "use strict";
     // #endregion
     /**
      * Represents a store that stores values in page scope, which means the data is lost when the page is closed.
      */
-    var PageStore = (function () {
+    var PageStore = /** @class */ (function () {
         function PageStore() {
             // #region Private Fields
             /**
              * Contains the dictionary that stores the values
              */
             this.pageStore = {};
+            // #endregion
         }
         // #endregion
         // #region Public Methods

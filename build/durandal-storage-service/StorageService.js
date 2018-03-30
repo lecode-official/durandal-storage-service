@@ -1,11 +1,11 @@
-///<amd-module name='Storage/StorageService'/>
-define("Storage/StorageService", ["require", "exports", "Globalization/DateTime", "Storage/LocalStore", "Globalization/Numeric", "Storage/PageStore", "Storage/SessionStore", "Storage/StorageKind", "Storage/StorageSerializer", "Globalization/TimeSpan"], function (require, exports, DateTime, LocalStore, Numeric, PageStore, SessionStore, StorageKind, StorageSerializer, TimeSpan) {
+///<amd-module name='durandal-storage-service/StorageService'/>
+define("durandal-storage-service/StorageService", ["require", "exports", "durandal-globalization/DateTime", "durandal-storage-service/LocalStore", "durandal-globalization/Numeric", "durandal-storage-service/PageStore", "durandal-storage-service/SessionStore", "durandal-storage-service/StorageKind", "durandal-storage-service/StorageSerializer", "durandal-globalization/TimeSpan"], function (require, exports, DateTime, LocalStore, Numeric, PageStore, SessionStore, StorageKind, StorageSerializer, TimeSpan) {
     "use strict";
     // #endregion
     /**
      * Represents a service that is used to store values in a persistent store.
      */
-    var StorageService = (function () {
+    var StorageService = /** @class */ (function () {
         function StorageService() {
         }
         Object.defineProperty(StorageService, "page", {

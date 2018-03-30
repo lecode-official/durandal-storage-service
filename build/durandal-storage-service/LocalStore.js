@@ -1,11 +1,11 @@
-///<amd-module name='Storage/LocalStore'/>
-define("Storage/LocalStore", ["require", "exports", "Storage/StorageSerializer", "store2"], function (require, exports, StorageSerializer, store2) {
+///<amd-module name='durandal-storage-service/LocalStore'/>
+define("durandal-storage-service/LocalStore", ["require", "exports", "durandal-storage-service/StorageSerializer", "store2"], function (require, exports, StorageSerializer, store2) {
     "use strict";
     // #endregion
     /**
      * Represents a store that stores values in local scope, which means persistently.
      */
-    var LocalStore = (function () {
+    var LocalStore = /** @class */ (function () {
         function LocalStore() {
         }
         // #region Public Methods

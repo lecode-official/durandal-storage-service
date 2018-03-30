@@ -1,38 +1,4 @@
-
-/**
- * Represents the interface of the store2 area.
- */
-interface Store2Area {
-    has(key: string): boolean;
-    get(key: string): any;
-    set(key: string, data: any): void;
-    remove(key: string): any;
-}
-
-/**
- * Represents the interface of the static store2 module.
- */
-interface Store2Static {
-    session: Store2Area;
-    local: Store2Area;
-}
-
-/**
- * Declares the static variable of the store2 module.
- */
-declare var store2: Store2Static;
-
-/**
- * Declares the store2 module.
- */
-declare module "store2" {
-    export = store2;
-}
-
-/// <reference path="Declarations.d.ts" />
-/// <reference path="../../bower_components/typescript-globalization/build/typescript-globalization.d.ts" />
-declare module 'Storage/IStore' {
-	/// <reference path="../Typings/References.d.ts" />
+declare module 'durandal-storage-service/IStore' {
 	/**
 	 * Represents a store that stores values.
 	 */
@@ -53,9 +19,8 @@ declare module 'Storage/IStore' {
 	export = IStore;
 
 }
-declare module 'Storage/LocalStore' {
-	/// <reference path="../Typings/References.d.ts" />
-	import IStore = require("Storage/IStore"); class LocalStore implements IStore {
+declare module 'durandal-storage-service/LocalStore' {
+	import IStore = require("durandal-storage-service/IStore"); class LocalStore implements IStore {
 	    /**
 	     * Gets a value that has been stored to the given key. If the key is not found, null is returned.
 	     * @param {string} key The key at which the value has been stored.
@@ -72,9 +37,8 @@ declare module 'Storage/LocalStore' {
 	export = LocalStore;
 
 }
-declare module 'Storage/PageStore' {
-	/// <reference path="../Typings/References.d.ts" />
-	import IStore = require("Storage/IStore"); class PageStore implements IStore {
+declare module 'durandal-storage-service/PageStore' {
+	import IStore = require("durandal-storage-service/IStore"); class PageStore implements IStore {
 	    /**
 	     * Contains the dictionary that stores the values
 	     */
@@ -95,9 +59,8 @@ declare module 'Storage/PageStore' {
 	export = PageStore;
 
 }
-declare module 'Storage/SessionStore' {
-	/// <reference path="../Typings/References.d.ts" />
-	import IStore = require("Storage/IStore"); class SessionStore implements IStore {
+declare module 'durandal-storage-service/SessionStore' {
+	import IStore = require("durandal-storage-service/IStore"); class SessionStore implements IStore {
 	    /**
 	     * Gets a value that has been stored to the given key. If the key is not found, null is returned.
 	     * @param {string} key The key at which the value has been stored.
@@ -114,7 +77,7 @@ declare module 'Storage/SessionStore' {
 	export = SessionStore;
 
 }
-declare module 'Storage/StorageKind' {
+declare module 'durandal-storage-service/StorageKind' {
 	 enum StorageKind {
 	    /**
 	     * The page store, which does not persist data.
@@ -132,7 +95,7 @@ declare module 'Storage/StorageKind' {
 	export = StorageKind;
 
 }
-declare module 'Storage/StorageSerializer' {
+declare module 'durandal-storage-service/StorageSerializer' {
 	 class StorageSerializer {
 	    /**
 	     * Initializes a new StorageSerializer instance.
@@ -184,13 +147,12 @@ declare module 'Storage/StorageSerializer' {
 	export = StorageSerializer;
 
 }
-declare module 'Storage/StorageService' {
-	/// <reference path="../Typings/References.d.ts" />
-	import LocalStore = require("Storage/LocalStore");
-	import PageStore = require("Storage/PageStore");
-	import SessionStore = require("Storage/SessionStore");
-	import IStore = require("Storage/IStore");
-	import StorageKind = require("Storage/StorageKind"); class StorageService {
+declare module 'durandal-storage-service/StorageService' {
+	import LocalStore = require("durandal-storage-service/LocalStore");
+	import PageStore = require("durandal-storage-service/PageStore");
+	import SessionStore = require("durandal-storage-service/SessionStore");
+	import IStore = require("durandal-storage-service/IStore");
+	import StorageKind = require("durandal-storage-service/StorageKind"); class StorageService {
 	    /**
 	     * Contains the store that is used to store values within page scope.
 	     */

@@ -1,5 +1,5 @@
 ﻿
-///<amd-module name='Storage/StorageKind'/>
+///<amd-module name='durandal-storage-service/StorageKind'/>
 
 /**
  * Represents the kind of a storage.

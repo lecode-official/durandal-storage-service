@@ -1,12 +1,11 @@
 {
-  "name": "typescript-storage-service",
-  "displayName": "TypeScript Storage Service",
-  "private": true,
-  "version": "0.1.4",
+  "name": "durandal-storage-service",
+  "displayName": "Durandal Storage Service",
+  "version": "0.1.5",
   "description": "A simple storage library written in TypeScript that can be used to access local storage, session storage, and non-persistant storage in a simple manner.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lecode-official/typescript-storage-service.git"
+    "url": "git+https://github.com/lecode-official/durandal-storage-service.git"
   },
   "keywords": [
     "Storage",
@@ -16,14 +15,16 @@
   "author": "David Neumann & Lukas Rögner",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lecode-official/typescript-storage-service/issues"
+    "url": "https://github.com/lecode-official/durandal-storage-service/issues"
   },
-  "homepage": "https://github.com/lecode-official/typescript-storage-service#readme",
+  "homepage": "https://github.com/lecode-official/durandal-storage-service#readme",
+  "dependencies": {
+    "durandal-globalization": "https://github.com/lecode-official/durandal-globalization.git#v0.1.5",
+    "store2": "2.7.0"
+  },
   "devDependencies": {
-    "bower": "^1.7.9",
     "dts-generator": "2.0.0",
     "gulp": "^3.9.1",
-    "gulp-bower": "0.0.13",
     "gulp-clean": "^0.3.2",
     "gulp-typescript": "^3.0.1",
     "run-sequence": "1.2.2",

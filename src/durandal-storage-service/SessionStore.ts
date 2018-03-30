@@ -1,20 +1,18 @@
 ﻿
-///<amd-module name='Storage/LocalStore'/>
+///<amd-module name='durandal-storage-service/SessionStore'/>
 
 // #region Import Directives
 
-/// <reference path="../Typings/References.d.ts" />
-
-import IStore = require("Storage/IStore");
-import StorageSerializer = require("Storage/StorageSerializer");
+import IStore = require("durandal-storage-service/IStore");
+import StorageSerializer = require("durandal-storage-service/StorageSerializer");
 import store2 = require("store2");
 
 // #endregion
 
 /**
- * Represents a store that stores values in local scope, which means persistently.
+ * Represents a store that stores values in session scope.
  */
-class LocalStore implements IStore {
+class SessionStore implements IStore {
 
     // #region Public Methods
     
@@ -24,10 +22,10 @@ class LocalStore implements IStore {
      * @return {T|null} Returns the value at the given key.
      */
     public get<T>(key: string): T|null {
-        if (!store2.local.has(window.location.host + ":" + key)) {
+        if (!store2.session.has(window.location.host + ":" + key)) {
             return null;
         } else {
-            return StorageSerializer.deserialize(store2.local.get(window.location.host + ":" + key));
+            return StorageSerializer.deserialize(store2.session.get(window.location.host + ":" + key));
         }
     }
 
@@ -38,9 +36,9 @@ class LocalStore implements IStore {
      */
     public store<T>(key: string, value: T|null) {
         if (!value) {
-            store2.local.remove(window.location.host + ":" + key);
+            store2.session.remove(window.location.host + ":" + key);
         } else {
-            store2.local.set(window.location.host + ":" + key, StorageSerializer.serialize(value));
+            store2.session.set(window.location.host + ":" + key, StorageSerializer.serialize(value));
         }
     }
 
@@ -48,4 +46,4 @@ class LocalStore implements IStore {
 }
 
 // Exports the module, so that it can be loaded by Require
-export = LocalStore;
+export = SessionStore;
