@@ -1,7 +1,7 @@
 {
   "name": "durandal-storage-service",
   "displayName": "Durandal Storage Service",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A simple storage library written in TypeScript that can be used to access local storage, session storage, and non-persistant storage in a simple manner.",
   "repository": {
     "type": "git",
@@ -29,5 +29,7 @@
     "gulp-typescript": "^3.0.1",
     "run-sequence": "1.2.2",
     "typescript": "^2.0.3"
-  }
+  },
+  "types": "./build/durandal-storage-service.d.ts",
+  "typings": "./build/durandal-storage-service.d.ts"
 }
